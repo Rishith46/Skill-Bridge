@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+  <div class="md:col-span-2 card-glass p-6">
+    <h2 class="text-2xl font-bold">Profile Builder</h2>
+    <p class="text-sm text-gray-400 mt-2">Select skills you have, skills you need, and set proficiency.</p>
+
+    <form id="profileForm" class="mt-6 space-y-4">
+      <div>
+        <label class="block text-sm font-medium">Your headline</label>
+        <input name="headline" class="mt-2 w-full p-3 rounded-xl bg-transparent glass-border" placeholder="e.g. ML Enthusiast & Product Designer" />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium">Skills (click to toggle)</label>
+        <div id="skillsList" class="mt-3 flex flex-wrap"></div>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium">Skill sliders</label>
+        <div class="mt-3 space-y-3">
+          <div class="flex items-center justify-between"><span>Product Design</span><input type="range" min="0" max="10" value="6"></div>
+          <div class="flex items-center justify-between"><span>Python</span><input type="range" min="0" max="10" value="7"></div>
+        </div>
+      </div>
+
+      <div class="flex gap-3">
+        <button class="btn-animate gradient-anim px-5 py-3 rounded-2xl text-black font-semibold">Save Profile</button>
+        <button type="button" class="chip">Preview</button>
+      </div>
+    </form>
+  </div>
+
+  <aside class="card-glass p-6">
+    <h4 class="font-semibold">Skill Radar</h4>
+    <div class="mt-4 radar-canvas">
+      <canvas id="radarChart"></canvas>
+    </div>
+    <div class="mt-6">
+      <h5 class="font-medium">Have / Need</h5>
+      <div class="mt-3 text-sm text-gray-400">Toggle whether a skill is something you can contribute or need.</div>
+    </div>
+  </aside>
+</div>
+{% endblock %}
+

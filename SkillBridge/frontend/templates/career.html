@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
+  <section class="lg:col-span-1 card-glass p-6 h-fit">
+    <h1 class="text-2xl font-bold">Career Navigator</h1>
+    <p class="mt-2 text-sm text-gray-400">Get five career targets tailored to your skills, coding level, interests, and project work.</p>
+    <form id="careerForm" class="mt-6 space-y-4" enctype="multipart/form-data">
+      <div>
+        <label class="block text-sm font-medium" for="careerSkills">Skills <span class="text-cyan-300">*</span></label>
+        <textarea id="careerSkills" name="skills" required rows="4" class="mt-2 w-full p-3 rounded-xl bg-transparent glass-border" placeholder="e.g. Python, SQL, Figma, communication"></textarea>
+      </div>
+      <div>
+        <label class="block text-sm font-medium" for="codingKnowledge">Coding knowledge <span class="text-cyan-300">*</span></label>
+        <select id="codingKnowledge" name="coding_knowledge" required class="mt-2 w-full p-3 rounded-xl bg-slate-900 glass-border">
+          <option value="">Select your level</option><option value="beginner">Beginner</option><option value="intermediate">Intermediate</option><option value="advanced">Advanced</option><option value="expert">Expert</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-sm font-medium" for="careerInterests">Job-role interests <span class="text-gray-500">(optional)</span></label>
+        <textarea id="careerInterests" name="interests" rows="3" class="mt-2 w-full p-3 rounded-xl bg-transparent glass-border" placeholder="e.g. I enjoy AI, data, and building useful web products"></textarea>
+      </div>
+      <div>
+        <label class="block text-sm font-medium" for="projectDocument">Project document <span class="text-gray-500">(optional)</span></label>
+        <input id="projectDocument" name="project_document" type="file" accept=".txt,.md,.pdf,.docx" class="mt-2 block w-full text-sm text-gray-300 file:mr-3 file:rounded-lg file:border-0 file:bg-indigo-600 file:px-3 file:py-2 file:text-white">
+        <p class="mt-1 text-xs text-gray-500">TXT, MD, PDF, or DOCX; maximum 5 MB.</p>
+      </div>
+      <button id="careerSubmit" class="w-full btn-animate gradient-anim px-5 py-3 rounded-2xl text-black font-semibold">Find my career options</button>
+    </form>
+  </section>
+  <section class="lg:col-span-2">
+    <div id="careerEmpty" class="card-glass p-8 text-center text-gray-400">Complete the form to see your top five career options.</div>
+    <div id="careerResults" class="space-y-4 hidden" aria-live="polite"></div>
+  </section>
+</div>
+{% endblock %}

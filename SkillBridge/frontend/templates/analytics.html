@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
+  <div class="lg:col-span-2 card-glass p-6">
+    <h2 class="text-2xl font-bold">Analytics</h2>
+    <p class="text-sm text-gray-400 mt-2">Insights into matches, skill demand, and trust trends.</p>
+
+    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="p-4 card-glass">
+        <h4 class="font-semibold">Match Success Rate</h4>
+        <canvas id="trendChart" class="mt-4"></canvas>
+      </div>
+
+      <div class="p-4 card-glass">
+        <h4 class="font-semibold">Trust Score Evolution</h4>
+        <canvas id="trustChart" class="mt-4"></canvas>
+      </div>
+    </div>
+
+    <div class="mt-6 p-4 card-glass">
+      <h4 class="font-semibold">Skill Heatmap</h4>
+      <div class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-3">
+        <div class="p-3 chip">Python</div>
+        <div class="p-3 chip">ML</div>
+        <div class="p-3 chip">UI</div>
+        <div class="p-3 chip">Product</div>
+      </div>
+    </div>
+  </div>
+
+  <aside class="space-y-4">
+    <div class="card-glass p-4">
+      <h4 class="font-semibold">Latest Insights</h4>
+      <div class="mt-2 text-sm text-gray-400">ML demand up 24% month-over-month.</div>
+    </div>
+
+    <div class="card-glass p-4">
+      <h4 class="font-semibold">Export</h4>
+      <div class="mt-2"><button class="chip">Download CSV</button></div>
+    </div>
+  </aside>
+</div>
+{% endblock %}
+

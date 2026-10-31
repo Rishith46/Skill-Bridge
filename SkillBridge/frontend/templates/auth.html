@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="max-w-md mx-auto py-8">
+  <div class="card-glass p-7">
+    {% if mode == 'login' %}
+      <p class="text-sm font-semibold text-cyan-300">Welcome back</p>
+      <h1 class="mt-1 text-3xl font-bold">Log in to SkillBridge</h1>
+      <p class="mt-2 text-sm text-gray-400">Access your projects, matches, and career recommendations.</p>
+    {% else %}
+      <p class="text-sm font-semibold text-cyan-300">Get started</p>
+      <h1 class="mt-1 text-3xl font-bold">Create your account</h1>
+      <p class="mt-2 text-sm text-gray-400">Join SkillBridge and build your student profile.</p>
+    {% endif %}
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for category, message in messages %}
+        <div class="mt-5 rounded-xl p-3 text-sm {% if category == 'error' %}bg-rose-500/15 text-rose-200{% else %}bg-emerald-500/15 text-emerald-200{% endif %}">{{ message }}</div>
+      {% endfor %}
+    {% endwith %}
+
+    <form method="post" action="{{ '/login' if mode == 'login' else '/register' }}" class="mt-6 space-y-4">
+      {% if mode == 'register' %}
+      <div><label for="name" class="block text-sm font-medium">Full name</label><input id="name" name="name" required autocomplete="name" class="mt-2 w-full rounded-xl bg-transparent p-3 glass-border" placeholder="Your name"></div>
+      {% endif %}
+      <div><label for="email" class="block text-sm font-medium">Email address</label><input id="email" type="email" name="email" required autocomplete="email" class="mt-2 w-full rounded-xl bg-transparent p-3 glass-border" placeholder="you@example.com"></div>
+      <div><label for="password" class="block text-sm font-medium">Password</label><input id="password" type="password" name="password" required {% if mode == 'register' %}minlength="8"{% endif %} autocomplete="{{ 'current-password' if mode == 'login' else 'new-password' }}" class="mt-2 w-full rounded-xl bg-transparent p-3 glass-border" placeholder="{% if mode == 'register' %}At least 8 characters{% else %}Your password{% endif %}"></div>
+      <button class="w-full btn-animate gradient-anim px-5 py-3 rounded-2xl text-black font-semibold">{{ 'Log in' if mode == 'login' else 'Create account' }}</button>
+    </form>
+    <p class="mt-5 text-center text-sm text-gray-400">{% if mode == 'login' %}New to SkillBridge? <a href="/register" class="text-cyan-300 hover:underline">Create an account</a>{% else %}Already have an account? <a href="/login" class="text-cyan-300 hover:underline">Log in</a>{% endif %}</p>
+  </div>
+</section>
+{% endblock %}

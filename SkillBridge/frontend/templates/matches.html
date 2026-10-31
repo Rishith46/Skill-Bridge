@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="max-w-6xl mx-auto">
+  <h2 class="text-2xl font-bold">Smart Matches</h2>
+  <p class="text-sm text-gray-400">Top 5 candidates who complement your skills.</p>
+
+  <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {% for i in range(5) %}
+    <div class="match-card match-collapsed card-glass p-4 rounded-2xl cursor-pointer">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-full avatar-gradient flex items-center justify-center text-sm font-semibold">JD</div>
+        <div class="flex-1">
+          <div class="font-semibold">Jordan Davis</div>
+          <div class="text-xs text-gray-400">ML · Backend</div>
+        </div>
+        <div class="w-32">
+          <div class="h-2 bg-white/6 rounded-full overflow-hidden">
+            <div style="width:82%" class="h-full bg-gradient-to-r from-sb-primaryFrom to-sb-primaryTo"></div>
+          </div>
+          <div class="text-xs text-gray-400 mt-1">Match: 82%</div>
+        </div>
+      </div>
+
+      <div class="mt-4 text-sm text-gray-300 hidden md:block">
+        Jordan contributed to 8 student projects. Top skills: ML, Data Processing. Trust: Gold.
+      </div>
+
+      <div class="mt-4 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="chip">ML</div>
+          <div class="chip">Data</div>
+        </div>
+        <button class="invite-btn btn-animate px-4 py-2 rounded-xl bg-emerald-400 text-black font-semibold">Invite</button>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="max-w-3xl mx-auto">
+  <div class="card-glass p-6">
+    <h2 class="text-2xl font-bold">Create Project</h2>
+    <p class="text-sm text-gray-400 mt-2">Describe the project and the skills you need.</p>
+
+    <form id="projectForm" class="mt-6 space-y-4">
+      <div>
+        <label class="block text-sm font-medium">Title</label>
+        <input name="title" class="mt-2 w-full p-3 rounded-xl bg-transparent glass-border" placeholder="Project title" />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium">Description</label>
+        <textarea name="description" rows="5" class="mt-2 w-full p-3 rounded-xl bg-transparent glass-border" placeholder="What is the project about?"></textarea>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium">Required skills</label>
+        <div id="projectSkills" class="mt-3 flex flex-wrap"></div>
+      </div>
+
+      <div class="flex gap-3">
+        <button class="btn-animate gradient-anim px-5 py-3 rounded-2xl text-black font-semibold">Post Project</button>
+        <button type="button" class="chip">Save Draft</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

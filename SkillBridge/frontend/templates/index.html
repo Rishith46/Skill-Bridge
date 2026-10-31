@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="max-w-6xl mx-auto">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+    <div class="space-y-6">
+      <div class="text-sm uppercase text-amber-300 font-semibold">Introducing</div>
+      <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">Find Teammates Who Complete You</h1>
+      <p class="text-gray-300 max-w-xl">SkillBridge uses AI to match your strengths and needs with other ambitious students. Build better teams, ship faster, and learn more together.</p>
+
+      <div class="flex gap-4">
+        <a href="/create_project" class="btn-animate inline-flex items-center gap-3 px-5 py-3 rounded-2xl gradient-anim text-black font-semibold shadow-lg">Get Started</a>
+        <a href="/matches" class="btn-animate inline-flex items-center gap-3 px-5 py-3 rounded-2xl glass-border text-gray-200">Explore</a>
+      </div>
+
+      <div class="mt-6 grid grid-cols-3 gap-4">
+        <div class="card-glass p-4 text-center">
+          <div class="text-2xl font-bold">AI</div>
+          <div class="text-xs text-gray-400 mt-1">Smart Matching</div>
+        </div>
+        <div class="card-glass p-4 text-center">
+          <div class="text-2xl font-bold">Skills</div>
+          <div class="text-xs text-gray-400 mt-1">Skill Gap Analysis</div>
+        </div>
+        <div class="card-glass p-4 text-center">
+          <div class="text-2xl font-bold">Trust</div>
+          <div class="text-xs text-gray-400 mt-1">Verified Reputation</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative">
+      <div class="rounded-2xl p-8 card-glass float-ani">
+        <div class="w-full h-64 rounded-xl overflow-hidden gradient-anim flex items-center justify-center">
+          <div class="text-center text-white/90">
+            <div class="text-sm uppercase text-white/80 font-semibold">Premium AI Match</div>
+            <div class="text-2xl font-bold mt-2">Team formed in seconds</div>
+            <div class="text-sm text-white/80 mt-2">Sample team: Designer · ML · Backend</div>
+          </div>
+        </div>
+        <div class="mt-4 grid grid-cols-2 gap-3">
+          <div class="p-3 glass-border rounded-xl text-sm">Skill Gap Insights</div>
+          <div class="p-3 glass-border rounded-xl text-sm">Trust Score Preview</div>
+        </div>
+      </div>
+      <div class="absolute -bottom-6 left-6 w-44 card-glass p-3 rounded-xl">Trusted by student teams at top universities</div>
+    </div>
+  </div>
+
+  <section class="mt-12">
+    <h3 class="text-xl font-bold">How it works</h3>
+    <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="card-glass p-6">
+        <div class="font-semibold">1. Tell us your skills</div>
+        <div class="text-sm text-gray-400 mt-2">Add skills you have and skills you need.</div>
+      </div>
+      <div class="card-glass p-6">
+        <div class="font-semibold">2. AI matches</div>
+        <div class="text-sm text-gray-400 mt-2">Our model suggests teammates who complement you.</div>
+      </div>
+      <div class="card-glass p-6">
+        <div class="font-semibold">3. Collaborate</div>
+        <div class="text-sm text-gray-400 mt-2">Start projects, chat, and track progress.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mt-12">
+    <h3 class="text-xl font-bold">What students say</h3>
+    <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="p-6 card-glass rounded-xl">
+        <div class="font-bold">“Found my co-founder in a day.”</div>
+        <div class="text-sm text-gray-400 mt-2">— Alex, Stanford</div>
+      </div>
+      <div class="p-6 card-glass rounded-xl">
+        <div class="font-bold">“Matches actually understood my needs.”</div>
+        <div class="text-sm text-gray-400 mt-2">— Priya, MIT</div>
+      </div>
+      <div class="p-6 card-glass rounded-xl">
+        <div class="font-bold">“Great for class projects and hackathons.”</div>
+        <div class="text-sm text-gray-400 mt-2">— Omar, UIUC</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="mt-12 text-sm text-gray-400">© 2026 SkillBridge — Built for student teams</footer>
+</section>
+{% endblock %}
+
